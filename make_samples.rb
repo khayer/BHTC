@@ -69,7 +69,7 @@ rm /mnt/<%= @tissue %>_CT<%= @ct %>_*R1.fastq.gz &
 rm /mnt/<%= @tissue %>_CT<%= @ct %>_*R2.fastq.gz &
 wait
 mkdir -p <%= @result_dir %>
-cp /mnt/<%= @tissue %>_CT<%= @ct %>_* <%= @result_dir %>
+rsync -v /mnt/<%= @tissue %>_CT<%= @ct %>_* <%= @result_dir %>
 EOF
 
 eruby = Erubis::Eruby.new(qsub_template)
