@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 require "yaml"
-require "rubygems"
+#require "rubygems"
 require 'erubis'
 require "optparse"
 require "logger"
