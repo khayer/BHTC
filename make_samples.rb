@@ -64,7 +64,7 @@ qsub_template =<<EOF
 cp /data/BHTC/<%= @tissue %>_CT<%= @ct %>_*R1.fastq.gz /mnt/ &
 cp /data/BHTC/<%= @tissue %>_CT<%= @ct %>_*R2.fastq.gz /mnt/ &
 wait
-/data/tools/STAR_2.3.0e.Linux_x86_64_static/STAR --genomeDir /data/mm9/ --readFilesIn /mnt/Liv_CT22_*R1.fastq.gz /mnt/Liv_CT22_*R2.fastq.gz  --runMode alignReads --runThreadN 4 --readFilesCommand zcat  --sjdbGTFfile /data/mm9_refseq_ucsc_vega_gene_info.gtf --outFileNamePrefix /mnt/<%= @tissue %>_CT<%= @ct %>_
+/data/tools/STAR_2.3.0e.Linux_x86_64_static/STAR --genomeDir /data/mm9/ --readFilesIn /mnt/<%= @tissue %>_CT<%= @ct %>_*R1.fastq.gz /mnt/<%= @tissue %>_CT<%= @ct %>_*R2.fastq.gz  --runMode alignReads --runThreadN 4 --readFilesCommand zcat  --sjdbGTFfile /data/mm9_refseq_ucsc_vega_gene_info.gtf --outFileNamePrefix /mnt/<%= @tissue %>_CT<%= @ct %>_
 rm /mnt/<%= @tissue %>_CT<%= @ct %>_*R1.fastq.gz &
 rm /mnt/<%= @tissue %>_CT<%= @ct %>_*R2.fastq.gz &
 wait
